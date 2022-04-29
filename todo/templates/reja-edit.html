@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kitob_tahrirlash</title>
+</head>
+<body>
+    <h1 style="text-align: center">Kitob tahrirlash:</h1>
+    <br> <br>
+    <form method="post" action="/reja_edit/{{Reja.id}}/">{%csrf_token%}
+        <label >
+          Student:
+            <select  name="s">
+                {%for i in student%}
+                <option value="{{i.id}}">{{i.ism}}</option>
+                {%endfor%}
+            </select>
+        </label>
+        <label >
+            Sana:
+            <input type="date"  name="sana" value="{{Reja.sana}}">
+        </label>
+        <br> <br>
+        <label >
+            Bajarilgan:
+            <input type="text"  name="b" value="{{Reja.bajarilgan}}">
+        </label>
+        <button type="submit">Saqlash</button>
+    </form>
+</body>
+</html>

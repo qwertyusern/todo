@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reja</title>
+</head>
+<body>
+    <h1 style="text-align: center">Rejalar:</h1>
+    {%for i in reja%}
+    <ul>
+        <li><h2>{{i}}</h2></li>
+    </ul>
+    <button><a href="/rejalar/{{i.id}}">O'chirish</a> </button>
+    <button><a href="/reja_edit/{{i.id}}">tahrirlash</a> </button>
+    {%endfor%}
+
+    <hr>
+    <form method="post" action="/rejalar/">{% csrf_token %}
+      <label >
+        <select  name="s">
+            {%for i in student%}
+            <option value="{{i.id}}">{{i.ism}}</option>
+            {%endfor%}
+        </select>
+      </label>
+      <input type="date" name="sana" placeholder="sanasi">
+      <input type="checkbox" name="b">
+      <input type="text" name="m" placeholder="malumot">
+      <input type="number" name="r" placeholder="telefon raqami">
+      <button type="submit">Qoshish</button>
+    </form>
+    <br>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student</title>
+</head>
+<body>
+    <h1 style="text-align: center">Studentlar:</h1>
+    {%for i in studentlar%}
+    <ul>
+        <li><h2>{{i}}</h2></li>
+    </ul>
+    <button><a href="/studentlar/{{i.id}}">O'chirish</a> </button>
+    <button><a href="/student_edit/{{i.id}}">tahrirlash</a> </button>
+    {%endfor%}
+
+    <hr>
+    <form method="post" action="/studentlar/">{% csrf_token %}
+      <input type="text" name="ism" placeholder="Studentning ismi">
+      <input type="number" name="yosh" placeholder="yoshi">
+      <input type="text" name="k"  placeholder="kursi" >
+      <input type="number" name="r" placeholder="tel">
+      <button type="submit">Qoshish</button>
+    </form>
+    <br>
+
+</body>
+</html>

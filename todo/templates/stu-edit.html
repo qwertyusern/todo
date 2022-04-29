@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" action="/student_edit/{{Student.id}}/">{%csrf_token%}
+        <label >
+            Ism:
+            <input type="text" name="i" value="{{Student.ism}}">
+        </label>
+        <label >
+            Raqam:
+            <input type="number"  name="t" value="{{Student.raqam}}">
+        </label>
+        <button type="submit">Saqlash</button>
+    </form>
+</body>
+</html>
